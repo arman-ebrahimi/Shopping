@@ -2,8 +2,8 @@ import axios from "axios";
 
 const serverAddress = 'http://localhost:5000/products/';
 export const productsService = {
-    getAllProducts: () => {
-        return axios.get(serverAddress);
+    getAllProducts: (q = "") => {
+        return axios.get(serverAddress + q);
     },
     getProductById: (id) => {
         return axios.get(serverAddress + id);

@@ -13,6 +13,18 @@ const cartSlice = createSlice({
             else{
                 state[existIndex].count++;
             }
+        },
+        removeItem(state, action){
+            return state.filter((item) => item.id !== action.payload);
+        },
+        changeCount(state, action){
+            const index = state.findIndex(item => item.id === action.payload.id);
+            if(state[index].count + action.payload.amount === 0){
+                return state;
+            }
+            else{
+                state[index].count += action.payload.amount;
+            }
         }
     }
 });

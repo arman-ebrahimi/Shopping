@@ -5,7 +5,7 @@ import {Carts} from "../components/Cart";
 export const CartPage = () => {
     const products = useSelector(state => state.cart);
 
-    return <div className="mt-2">
+    return <div className="container mt-2">
         <Carts products={products} />
     </div>
 }
